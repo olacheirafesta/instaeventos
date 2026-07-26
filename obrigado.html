@@ -18,6 +18,11 @@ fbq('init','641108990769540');fbq('track','PageView');
 <style>
   html, body { margin:0; padding:0; background:#F4EFE8; }
   *::selection { background:#E3DCCD; color:#2A241F; }
+  .btn-choc { display:inline-block; font-weight:600; text-transform:uppercase; background:#694A3A; color:#F4EFE8; text-decoration:none; border-radius:2px; transition:background .25s; }
+  .btn-choc:hover { background:#4E362A; }
+  .store-btn { display:inline-flex; align-items:center; gap:10px; background:#2A241F; color:#F4EFE8; text-decoration:none; border-radius:8px; padding:11px 20px; transition:opacity .25s; }
+  .store-btn:hover { opacity:.85; }
+  @media (max-width:640px){ .steps-card{ flex-direction:column !important; gap:12px !important; } }
 </style>
 </head>
 <body>
@@ -25,41 +30,60 @@ fbq('init','641108990769540');fbq('track','PageView');
 <div style="font-family:'Montserrat',sans-serif; -webkit-font-smoothing:antialiased; color:#2A241F; min-height:100vh;">
 
   <!-- CABEÇALHO -->
-  <div style="text-align:center; padding:46px 24px 0;">
+  <div style="text-align:center; padding:44px 24px 0;">
     <div style="font-family:'Open Sans',sans-serif; font-weight:700; font-size:clamp(24px,3.5vw,32px); letter-spacing:0.01em; color:#694A3A;">INSTA<span style="font-family:'Playfair Display',serif; font-style:italic; font-weight:500; color:#C4B8A3;">Eventos</span></div>
   </div>
 
   <!-- CONFIRMAÇÃO -->
-  <section style="max-width:640px; margin:0 auto; padding:40px 28px 8px; text-align:center;">
-    <div style="width:64px; height:64px; margin:0 auto 24px; border-radius:50%; background:#694A3A; color:#F4EFE8; display:flex; align-items:center; justify-content:center; font-size:28px;">✓</div>
-    <h1 style="font-family:'Playfair Display',serif; font-weight:600; font-size:clamp(28px,4.5vw,42px); line-height:1.15; margin:0 0 16px;">Compra confirmada.<br><span style="font-style:italic; color:#86614F;">Bem-vinda ao InstaEventos.</span></h1>
-    <p style="font-size:17px; line-height:1.7; color:#5D5248; margin:0 auto; max-width:460px;">O teu acesso já está criado. Segue estes passos e daqui a 1 minuto estás lá dentro.</p>
+  <section style="max-width:680px; margin:0 auto; padding:38px 28px 0; text-align:center;">
+    <div style="width:62px; height:62px; margin:0 auto 22px; border-radius:50%; background:#694A3A; color:#F4EFE8; display:flex; align-items:center; justify-content:center; font-size:27px;">✓</div>
+    <h1 style="font-family:'Playfair Display',serif; font-weight:600; font-size:clamp(28px,4.5vw,42px); line-height:1.15; margin:0 0 14px;">Compra confirmada.<br><span style="font-style:italic; color:#86614F;">Bem-vinda ao InstaEventos.</span></h1>
+    <p style="font-size:17px; line-height:1.7; color:#5D5248; margin:0 auto 6px; max-width:460px;">O teu acesso já está criado. Segue estes passos e daqui a 1 minuto estás lá dentro.</p>
+    <img src="img/mockup-produto.png" alt="InstaEventos — curso online" style="max-width:min(440px,88%); height:auto; margin:18px auto 0; display:block;">
   </section>
 
   <!-- PASSOS -->
-  <section style="max-width:640px; margin:0 auto; padding:38px 28px 30px;">
+  <section style="max-width:680px; margin:0 auto; padding:28px 28px 30px;">
 
-    <div style="background:#FFFFFF; border-radius:6px; padding:30px 30px 28px; margin-bottom:16px; display:flex; gap:22px; align-items:flex-start;">
-      <div style="font-family:'Playfair Display',serif; font-size:34px; font-weight:500; color:#C4B8A3; line-height:1;">1</div>
+    <div class="steps-card" style="background:#FFFFFF; border-radius:8px; padding:32px 32px 30px; margin-bottom:16px; display:flex; gap:24px; align-items:flex-start; box-shadow:0 1px 3px rgba(42,36,31,.06);">
+      <div style="min-width:44px; height:44px; border-radius:50%; background:#F4EFE8; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:22px; font-weight:600; color:#694A3A;">1</div>
       <div style="flex:1;">
-        <h2 style="font-size:16px; font-weight:600; margin:2px 0 8px;">Cria a tua conta no Clube Viver de Eventos</h2>
+        <h2 style="font-size:17px; font-weight:600; margin:8px 0 8px;">Cria a tua conta no Clube Viver de Eventos</h2>
         <p style="font-size:15px; line-height:1.7; color:#5D5248; margin:0 0 18px;">Clica no botão, escreve o teu nome e define a tua palavra-passe. Usa o <strong>mesmo email da compra</strong> — é ele que tem o acesso associado.</p>
-        <a href="https://clube-viver-de-eventos.circle.so/join?invitation_token=a4ea17a138cf8f479c34b987c3ee4f323490dffe-8fe1a158-2ff5-4368-b6bc-6e06ede2e06f" style="display:inline-block; font-weight:600; text-transform:uppercase; background:#694A3A; color:#F4EFE8; text-decoration:none; border-radius:2px; font-size:12.5px; letter-spacing:0.14em; padding:17px 32px;">Criar a minha conta</a>
+        <a href="https://clube-viver-de-eventos.circle.so/join?invitation_token=a4ea17a138cf8f479c34b987c3ee4f323490dffe-8fe1a158-2ff5-4368-b6bc-6e06ede2e06f" class="btn-choc" style="font-size:12.5px; letter-spacing:0.14em; padding:17px 32px;">Criar a minha conta</a>
       </div>
     </div>
 
-    <div style="background:#FFFFFF; border-radius:6px; padding:30px 30px 26px; margin-bottom:16px; display:flex; gap:22px; align-items:flex-start;">
-      <div style="font-family:'Playfair Display',serif; font-size:34px; font-weight:500; color:#C4B8A3; line-height:1;">2</div>
+    <div class="steps-card" style="background:#FFFFFF; border-radius:8px; padding:32px 32px 30px; margin-bottom:16px; display:flex; gap:24px; align-items:flex-start; box-shadow:0 1px 3px rgba(42,36,31,.06);">
+      <div style="min-width:44px; height:44px; border-radius:50%; background:#F4EFE8; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:22px; font-weight:600; color:#694A3A;">2</div>
       <div>
-        <h2 style="font-size:16px; font-weight:600; margin:2px 0 8px;">Entra no InstaEventos e começa</h2>
+        <h2 style="font-size:17px; font-weight:600; margin:8px 0 8px;">Entra no InstaEventos e começa</h2>
         <p style="font-size:15px; line-height:1.7; color:#5D5248; margin:0;">Lá dentro encontras o espaço <strong>InstaEventos</strong> com as aulas todas e o bónus Planner de Conteúdos. Se juntaste o <strong>Workshop Preço Justo</strong> ao pedido, também já lá está à tua espera.</p>
       </div>
     </div>
 
-    <div style="background:#FFFFFF; border-radius:6px; padding:30px 30px 26px; display:flex; gap:22px; align-items:flex-start;">
-      <div style="font-family:'Playfair Display',serif; font-size:34px; font-weight:500; color:#C4B8A3; line-height:1;">3</div>
+    <div class="steps-card" style="background:#FFFFFF; border-radius:8px; padding:32px 32px 30px; margin-bottom:16px; display:flex; gap:24px; align-items:flex-start; box-shadow:0 1px 3px rgba(42,36,31,.06);">
+      <div style="min-width:44px; height:44px; border-radius:50%; background:#F4EFE8; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:22px; font-weight:600; color:#694A3A;">3</div>
+      <div style="flex:1;">
+        <h2 style="font-size:17px; font-weight:600; margin:8px 0 8px;">Descarrega a app e leva as aulas contigo</h2>
+        <p style="font-size:15px; line-height:1.7; color:#5D5248; margin:0 0 18px;">Instala a app <strong>Circle</strong> no telemóvel e faz login com o email e a palavra-passe que criaste no passo 1. Assim tens as aulas sempre à mão — até a caminho de um evento.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://apps.apple.com/pt/app/circle-communities/id1509651625" class="store-btn">
+            <span style="font-size:22px; line-height:1;">&#63743;</span>
+            <span style="text-align:left; line-height:1.25;"><span style="display:block; font-size:10px; letter-spacing:.04em; opacity:.75;">Descarregar na</span><span style="display:block; font-size:15px; font-weight:600;">App Store</span></span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=so.circle.circle" class="store-btn">
+            <span style="font-size:19px; line-height:1;">▶</span>
+            <span style="text-align:left; line-height:1.25;"><span style="display:block; font-size:10px; letter-spacing:.04em; opacity:.75;">Disponível no</span><span style="display:block; font-size:15px; font-weight:600;">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps-card" style="background:#FFFFFF; border-radius:8px; padding:32px 32px 30px; display:flex; gap:24px; align-items:flex-start; box-shadow:0 1px 3px rgba(42,36,31,.06);">
+      <div style="min-width:44px; height:44px; border-radius:50%; background:#F4EFE8; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:22px; font-weight:600; color:#694A3A;">4</div>
       <div>
-        <h2 style="font-size:16px; font-weight:600; margin:2px 0 8px;">Vem contar-me</h2>
+        <h2 style="font-size:17px; font-weight:600; margin:8px 0 8px;">Vem contar-me</h2>
         <p style="font-size:15px; line-height:1.7; color:#5D5248; margin:0;">Segue-me no Instagram <a href="https://www.instagram.com/adrianacheirafesta" style="color:#694A3A; font-weight:600;">@adrianacheirafesta</a> e manda-me DM quando publicares o teu primeiro conteúdo com a rotina. Quero celebrar contigo.</p>
       </div>
     </div>
@@ -67,8 +91,8 @@ fbq('init','641108990769540');fbq('track','PageView');
   </section>
 
   <!-- AJUDA -->
-  <section style="max-width:640px; margin:0 auto; padding:0 28px 56px; text-align:center;">
-    <div style="background:#EFECE7; border-radius:6px; padding:22px 26px;">
+  <section style="max-width:680px; margin:0 auto; padding:0 28px 56px; text-align:center;">
+    <div style="background:#EFECE7; border-radius:8px; padding:22px 26px;">
       <p style="font-size:14px; line-height:1.7; color:#5D5248; margin:0;">Algum problema com o acesso? Escreve para <a href="mailto:ola@cheirafesta.pt" style="color:#694A3A; font-weight:600;">ola@cheirafesta.pt</a> com o email que usaste na compra e resolvemos logo.</p>
     </div>
   </section>
