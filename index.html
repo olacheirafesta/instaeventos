@@ -294,16 +294,30 @@ fbq('init','641108990769540');fbq('track','PageView');
 (function(){
   function ck(n){var m=document.cookie.match('(?:^|; )'+n.replace(/([.*+?^${}()|[\]\\])/g,'\\$1')+'=([^;]*)');return m?decodeURIComponent(m[1]):null;}
   function b64url(s){return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+  /* Origem da visita → segue na referência da compra (…__src__email / __src__ad / __src__dir).
+     Guardada em sessionStorage para sobreviver a navegação dentro da sessão. */
+  var src=(function(){
+    try{
+      var q=new URLSearchParams(location.search);
+      var m=(q.get('utm_medium')||'').toLowerCase(), s=(q.get('utm_source')||'').toLowerCase(), v='';
+      if(m==='paid'||s==='instagram'||q.get('fbclid'))v='ad';
+      else if(m==='mailerlite'||m==='email'||s==='email')v='email';
+      else if(s)v=s.replace(/[^a-z0-9]/g,'').slice(0,10);
+      if(v){sessionStorage.setItem('ie_src',v);return v;}
+      return sessionStorage.getItem('ie_src')||'dir';
+    }catch(e){return 'dir';}
+  })();
   function decorate(href){
     try{
       var u=new URL(href), cur=u.searchParams.get('client_reference_id')||'';
       var page=cur.indexOf('instaeventos-pv-b')===0?'instaeventos-pv-b':'instaeventos-pv-a';
+      var base=page+'__src__'+src;
       var fbc=ck('_fbc'), fbp=ck('_fbp'), payload={};
       if(fbc)payload.c=fbc; if(fbp)payload.p=fbp;
-      var ref=page;
+      var ref=base;
       if(payload.c||payload.p){
-        var cand=page+'__fb__'+b64url(JSON.stringify(payload));
-        if(cand.length>195&&payload.p){delete payload.p;cand=page+'__fb__'+b64url(JSON.stringify(payload));}
+        var cand=base+'__fb__'+b64url(JSON.stringify(payload));
+        if(cand.length>195&&payload.p){delete payload.p;cand=base+'__fb__'+b64url(JSON.stringify(payload));}
         if(cand.length<=195)ref=cand;
       }
       u.searchParams.set('client_reference_id',ref);
